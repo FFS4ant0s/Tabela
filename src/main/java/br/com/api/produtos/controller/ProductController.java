@@ -1,7 +1,10 @@
 package br.com.api.produtos.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.api.produtos.models.ModelProduct;
@@ -10,6 +13,11 @@ import br.com.api.produtos.service.ProductService;
 public class ProductController {
     @Autowired
     private ProductService ps;
+
+    @PostMapping("/cadastrar")
+    public ResponseEntity<?> register(@RequestBody ModelProduct pm){
+        return ps.register(pm);
+    }
 
     @GetMapping("/listar")
     public Iterable<ModelProduct> listar(){
