@@ -16,7 +16,7 @@ public class ProductController {
 
     @PostMapping("/cadastrar")
     public ResponseEntity<?> register(@RequestBody ModelProduct pm){
-        return ps.register(pm);
+        return ps.registeralter(pm, "cadastrar");
     }
 
     @GetMapping("/listar")
