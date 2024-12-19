@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.api.produtos.models.ModelProduct;
 import br.com.api.produtos.service.ProductService;
-
 @RestController
 public class ProductController {
     @Autowired
